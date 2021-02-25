@@ -1,10 +1,17 @@
+package hashcodeprac;
+
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class evenmorepizza {
 	static class PizzaIng{
 		public int noing;
 		public ArrayList<String> ingredient= new ArrayList<>();
-		public PizzaIng(int noing, ArrayList<String> ingredient) {
+		public PizzaIng() {
+			int noing=0; 
+			ArrayList<String> ingredient = new ArrayList<String>();
 			this.noing = noing;
 			this.ingredient = ingredient;
 		}
@@ -16,8 +23,13 @@ public int t3;
 public int t4;
 
 ArrayList <PizzaIng> pizzaing = new ArrayList <>(); 
-public emp(int availablePizza, int t2, int t3, int t4, ArrayList<PizzaIng> PizzaIng) {
-	
+public emp() {
+
+	int availablePizza=0; 
+	int t2=0; 
+	int t3=0; 
+	int t4=0;
+	ArrayList<PizzaIng> PizzaIng = new ArrayList<evenmorepizza.PizzaIng>();	
 	this.availablePizza=availablePizza;
 	this.t2= t2;
 	this.t3=t3;
@@ -27,18 +39,48 @@ public emp(int availablePizza, int t2, int t3, int t4, ArrayList<PizzaIng> Pizza
 
 	}
 	
-public static void main(String[] args) {
-	ArrayList<String> ingredient = new ArrayList<>();
-	ingredient.add("olive");
-	ingredient.add("onion");
-	PizzaIng p = new PizzaIng(2, ingredient);
-	ArrayList<PizzaIng> pi= new ArrayList<PizzaIng>();
-	pi.add(p);
+public static void main(String[] args) throws FileNotFoundException {
+//	ArrayList<String> ingredient = new ArrayList<>();
+//	ingredient.add("olive");
+//	ingredient.add("onion");
+//	PizzaIng p = new PizzaIng(2, ingredient);
+//	ArrayList<PizzaIng> pi= new ArrayList<PizzaIng>();
+//	pi.add(p);
+//
+//	
+//	emp emp = new emp(5,4,3,1,pi);
+//	
+//	System.out.println(emp.t2+" "+emp.t3+" "+emp.t4+" ");
+//	System.out.println(emp.availablePizza+" "+emp.pizzaing.get(0).ingredient.get(1));
+	File  file = new File("C:\\Users\\PRNAV\\Downloads\\a_example");
+	Scanner s = new Scanner(file);
+	emp za = new emp();
+	za.availablePizza=s.nextInt();
+	za.t2=s.nextInt();
+	za.t3=s.nextInt();
+	za.t4=s.nextInt();
+	ArrayList<PizzaIng> ingred=new ArrayList<>();
+	for(int i=0;i<za.availablePizza;i++)
+	{
+		PizzaIng pi= new PizzaIng();
+		pi.noing=s.nextInt();
+		for(int j=1; j<=pi.noing; j++)
+		{
+			pi.ingredient.add(s.next());
+		}
+	ingred.add(pi);
+	}
+	System.out.println(za.availablePizza);
+	System.out.println(za.t2);
+	System.out.println(za.t3);
+	System.out.println(za.t4);
+	for(int i = 0; i<ingred.size(); i++)
+		for(int j=0;j<ingred.get(i).noing;j++)
+		{
+		System.out.print(ingred.get(i).ingredient.get(j) +" ");	
+	}
+	System.out.println();
+	}
 
-	
-	emp emp = new emp(5,4,3,1,pi);
-	
-	System.out.println(emp.t2+" "+emp.t3+" "+emp.t4+" ");
-	System.out.println(emp.availablePizza+" "+emp.pizzaing.get(0).ingredient.get(1));
 }
-}
+
