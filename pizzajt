@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+
+public class evenmorepizza {
+	static class PizzaIng{
+		public int noing;
+		public ArrayList<String> ingredient= new ArrayList<>();
+		public PizzaIng(int noing, ArrayList<String> ingredient) {
+			this.noing = noing;
+			this.ingredient = ingredient;
+		}
+	}
+	static class emp{
+public int availablePizza;
+public int t2;
+public int t3;
+public int t4;
+
+ArrayList <PizzaIng> pizzaing = new ArrayList <>(); 
+public emp(int availablePizza, int t2, int t3, int t4, ArrayList<PizzaIng> PizzaIng) {
+	
+	this.availablePizza=availablePizza;
+	this.t2= t2;
+	this.t3=t3;
+	this.t4=t4;
+	this.pizzaing=PizzaIng;
+}
+
+	}
+	
+public static void main(String[] args) {
+	ArrayList<String> ingredient = new ArrayList<>();
+	ingredient.add("olive");
+	ingredient.add("onion");
+	PizzaIng p = new PizzaIng(2, ingredient);
+	ArrayList<PizzaIng> pi= new ArrayList<PizzaIng>();
+	pi.add(p);
+
+	
+	emp emp = new emp(5,4,3,1,pi);
+	
+	System.out.println(emp.t2+" "+emp.t3+" "+emp.t4+" ");
+	System.out.println(emp.availablePizza+" "+emp.pizzaing.get(0).ingredient.get(1));
+}
+}
