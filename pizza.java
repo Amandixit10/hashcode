@@ -21,7 +21,7 @@ for(int i=0;i<n_pizza;i++)
 {
 	inf x=new inf();
 	x.no_ing=sc.nextInt();
-	for(int j=0;j<x.no_ing;j++)
+	for(int j=1;j<=x.no_ing;j++)
 	{
 		x.ing_ctn.add(sc.next());
 	}
